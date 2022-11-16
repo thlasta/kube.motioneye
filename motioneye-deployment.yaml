@@ -29,7 +29,7 @@ spec:
       volumes:
         - name: motioneye-lib-pv-storage
           persistentVolumeClaim:
-            claimName: grafana-pvc
+            claimName: motioneye-lib-pv-claim
         - name: motioneye-etc-pv-storage
           persistentVolumeClaim:
             claimName: motioneye-etc-pv-claim
