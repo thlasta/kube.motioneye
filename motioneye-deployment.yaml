@@ -48,6 +48,10 @@ spec:
               name: motioneye-etc-pv-storage
             - mountPath: "/var/lib/motioneye"
               name: motioneye-lib-pv-storage
+            - mountPath: "/motion/cam1"
+              name: motioneye-lib-pv-storage
+            - mountPath: "/motion/cam2"
+              name: motioneye-lib-pv-storage
             - mountPath: "/etc/localtime"
               name: localtime
           env:
