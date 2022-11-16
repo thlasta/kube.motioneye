@@ -36,9 +36,15 @@ spec:
         - name: localtime
           hostPath:
             path: "/etc/localtime"
-        - name: dev
+        - name: ttyacm0
           hostPath:
-            path: "/dev"
+            path: /dev/ttyACM0
+        - name: video0
+          hostPath:
+            path: /dev/video0
+        - name: video1
+          hostPath:
+            path: /dev/video1
       containers:
         - name: motioneye-container
           image: dontobi/motioneye.rpi
@@ -51,18 +57,29 @@ spec:
               protocol: TCP
               name: "server"
           volumeMounts:
+            - mountPath: "/dev/ttyACM0"
+              name: ttyacm0
+              readOnly: false
+            - mountPath: "/dev/video0"
+              name: video0
+            - mountPath: "/dev/video1"
+              name: video1
+              readOnly: false
             - mountPath: "/etc/motioneye"
               name: motioneye-etc-pv-storage
+              readOnly: false
             - mountPath: "/var/lib/motioneye"
               name: motioneye-lib-pv-storage
+              readOnly: false
             - mountPath: "/motion/cam1"
               name: motioneye-lib-pv-storage
+              readOnly: false
             - mountPath: "/motion/cam2"
               name: motioneye-lib-pv-storage
+              readOnly: false
             - mountPath: "/etc/localtime"
               name: localtime
-            - mountPath: "/dev"
-              name: dev
+              readOnly: false
           env:
             - name: hostname
               value: "motioneye"
