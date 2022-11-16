@@ -29,10 +29,10 @@ spec:
       volumes:
         - name: motioneye-lib-pv-storage
           persistentVolumeClaim:
-            claimName: motioneye-lib-pv-claim
+            claimName: motioneye-lib-pvc
         - name: motioneye-etc-pv-storage
           persistentVolumeClaim:
-            claimName: motioneye-etc-pv-claim
+            claimName: motioneye-etc-pv
         - name: localtime
           hostPath:
             path: "/etc/localtime"

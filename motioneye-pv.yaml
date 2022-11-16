@@ -1,12 +1,14 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: motioneye-pv-volume
+  name: motioneye-pv
+  namespace: motioneye
   labels:
+    app: motioneye
     type: local
 spec:
   capacity:
-    storage: 50Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:

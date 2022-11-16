@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: motioneye-lib-pvc
+  namespace: motioneye
+  labels:
+    app: motioneye
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storageclass
+  resources:
+    requests:
+      storage: 50Gi
