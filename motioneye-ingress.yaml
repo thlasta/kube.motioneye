@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: motioneye-http-ingress
+  namespace: motioneye
+  labels:
+    app: motioneye
+spec:
+  backend:
+    serviceName: motioneye-http-service
+    servicePort: 8765
