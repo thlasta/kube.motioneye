@@ -15,7 +15,8 @@ metadata:
   name: motioneye-lib-pv-claim
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+  storageClassName: nfs-storageclass
   resources:
     requests:
-      storage: 40Gi
+      storage: 50Gi
