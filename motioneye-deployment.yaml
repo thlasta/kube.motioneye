@@ -42,6 +42,10 @@ spec:
       containers:
         - name: motioneye-container
           image: dontobi/motioneye.rpi
+          securityContext:
+            capabilities:
+              add: [ "NET_ADMIN", "SYS_ADMIN" ]
+            runAsUser: 0
           ports:
             - containerPort: 8765
               protocol: TCP
