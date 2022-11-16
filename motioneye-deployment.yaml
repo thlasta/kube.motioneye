@@ -36,6 +36,9 @@ spec:
         - name: localtime
           hostPath:
             path: "/etc/localtime"
+        - name: dev
+          hostPath:
+            path: "/dev"
       containers:
         - name: motioneye-container
           image: dontobi/motioneye.rpi
@@ -54,6 +57,8 @@ spec:
               name: motioneye-lib-pv-storage
             - mountPath: "/etc/localtime"
               name: localtime
+            - mountPath: "/dev"
+              name: dev
           env:
             - name: hostname
               value: "motioneye"
