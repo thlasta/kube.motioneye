@@ -66,3 +66,7 @@ spec:
           env:
             - name: hostname
               value: "motioneye"
+            - name: PGID
+              value: "0"
+            - name: PUID
+              value: "0"
