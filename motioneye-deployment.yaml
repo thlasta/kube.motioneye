@@ -7,6 +7,10 @@ metadata:
   labels:
     app: motioneye
 spec:
+  selector:
+    matchLabels:
+      app: motioneye
+      tier: frontend
   replicas: 1
   template:
     metadata:
