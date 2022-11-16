@@ -6,9 +6,11 @@ metadata:
   labels:
     app: motioneye
 spec:
-  type: NodePort
-  ports:
-    - port: 8765
-      nodePort: 31180
   selector:
     app: motioneye
+    tier: frontend
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8765
+  type: NodePort
