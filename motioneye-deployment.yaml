@@ -44,6 +44,9 @@ spec:
         - name: ttyacm0
           hostPath:
             path: /dev/ttyACM0
+        - name: v4l
+          hostPath:
+            path: /dev/v4l
         - name: video0
           hostPath:
             path: /dev/video0
@@ -62,6 +65,9 @@ spec:
               protocol: TCP
               name: "server"
           volumeMounts:
+            - mountPath: "/dev/v4l/"
+              name: v4l
+              readOnly: false
             - mountPath: "/dev/ttyACM0"
               name: ttyacm0
               readOnly: false
