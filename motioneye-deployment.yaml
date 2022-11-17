@@ -6,6 +6,11 @@ metadata:
   labels:
     app: motioneye
 spec:
+  securityContext:
+    runAsUser: 0
+    runAsGroup: 0
+    fsGroup: 0
+    fsGroupChangePolicy: "OnRootMismatch"
   selector:
     matchLabels:
       app: motioneye
@@ -51,7 +56,7 @@ spec:
           securityContext:
             capabilities:
               add: [ "NET_ADMIN", "SYS_ADMIN" ]
-            runAsUser: 0
+            allowPrivilegeEscalation: true
           ports:
             - containerPort: 8765
               protocol: TCP
