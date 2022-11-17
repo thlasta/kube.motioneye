@@ -78,6 +78,6 @@ spec:
             - name: hostname
               value: "motioneye"
             - name: PGID
-              value: "0"
+              value: "44"
             - name: PUID
               value: "0"
