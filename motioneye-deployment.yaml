@@ -6,11 +6,6 @@ metadata:
   labels:
     app: motioneye
 spec:
-  securityContext:
-    runAsUser: 0
-    runAsGroup: 0
-    fsGroup: 0
-    fsGroupChangePolicy: "OnRootMismatch"
   selector:
     matchLabels:
       app: motioneye
@@ -22,6 +17,11 @@ spec:
         app: motioneye
         tier: frontend
     spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
+        fsGroupChangePolicy: "OnRootMismatch"
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
