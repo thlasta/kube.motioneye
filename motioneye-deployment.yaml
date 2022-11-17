@@ -47,10 +47,10 @@ spec:
         - name: v4l
           hostPath:
             path: /dev/v4l
-        - name: video0
+        - name: video2
           hostPath:
             path: /dev/video2
-        - name: video1
+        - name: video3
           hostPath:
             path: /dev/video3
       containers:
