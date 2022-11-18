@@ -18,8 +18,8 @@ spec:
         tier: frontend
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
+        runAsUser: 0
+        runAsGroup: 0
         fsGroup: 44
         fsGroupChangePolicy: "OnRootMismatch"
       affinity:
