@@ -51,6 +51,7 @@ spec:
             capabilities:
               add: [ "NET_ADMIN", "SYS_ADMIN" ]
             allowPrivilegeEscalation: true
+            privileged: true
           ports:
             - containerPort: 8765
               protocol: TCP
