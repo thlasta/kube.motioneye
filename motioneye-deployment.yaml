@@ -54,13 +54,6 @@ spec:
               add: [ "NET_ADMIN", "SYS_ADMIN" ]
             allowPrivilegeEscalation: true
             privileged: true
-          livenessProbe:
-            httpGet:
-              scheme: HTTP
-              path: /
-              port: 30228
-            initialDelaySeconds: 30
-            timeoutSeconds: 30
           ports:
             - containerPort: 8765
               protocol: TCP
