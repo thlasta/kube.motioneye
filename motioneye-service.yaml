@@ -14,9 +14,9 @@ spec:
       name: http
       port: 8765
     - protocol: TCP
-      name: http-streaming-1
+      name: http-1
       port: 8081
     - protocol: TCP
-      name: http-streaming-2
+      name: http-2
       port: 8082
   type: NodePort
