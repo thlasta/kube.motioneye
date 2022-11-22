@@ -23,7 +23,7 @@ spec:
         fsGroup: 1000
         fsGroupChangePolicy: "OnRootMismatch"
         supplementalGroups:
-          -  44
+          - 44
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -55,6 +55,12 @@ spec:
             allowPrivilegeEscalation: true
             privileged: true
           ports:
+            - name: http-streaming-1
+              containerPort: 8081
+              protocol: TCP
+            - name: http-streaming-2
+              containerPort: 8082
+              protocol: TCP
             - containerPort: 8765
               protocol: TCP
               name: "server"
