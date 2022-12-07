@@ -52,6 +52,13 @@ spec:
       containers:
         - name: motioneye-container
           image: dontobi/motioneye.rpi
+          resources:
+            requests:
+              cpu: 500m
+              memory: 125M
+            limits:
+              cpu: 500m
+              memory: 125M
           securityContext:
             capabilities:
               add: [ "NET_ADMIN", "SYS_ADMIN" ]
