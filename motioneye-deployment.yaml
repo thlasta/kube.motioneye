@@ -43,9 +43,12 @@ spec:
         - name: localtime
           hostPath:
             path: "/etc/localtime"
-        - name: dev
+        - name: video2
           hostPath:
-            path: /dev
+            path: /dev/video2
+        - name: video3
+          hostPath:
+            path: /dev/video3
       containers:
         - name: motioneye-container
           image: dontobi/motioneye.rpi
@@ -65,8 +68,11 @@ spec:
               protocol: TCP
               name: "server"
           volumeMounts:
-            - mountPath: "/dev"
-              name: dev
+            - mountPath: /dev/video3
+              name: video2
+              readOnly: false
+            - mountPath: /dev/video2
+              name: video3
               readOnly: false
             - mountPath: "/etc/motioneye"
               name: motioneye-etc-pv-storage
