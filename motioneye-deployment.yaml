@@ -51,6 +51,11 @@ spec:
               add: [ "NET_ADMIN", "SYS_ADMIN" ]
             allowPrivilegeEscalation: true
             privileged: true
+          resources:
+            requests:
+              cpu: 500m
+            limits:
+              cpu: 500m
           ports:
             - name: http-1
               containerPort: 8081
